@@ -27,7 +27,8 @@ document.addEventListener("DOMContentLoaded", function() {
             `)
         })
         listContainer.innerHTML = tasksRender.join("");
-        
+        /**2 ejercicio */
+        document.getElementById('form-horizontal').reset();
     })
 
     let tasksRender = tasks.map((task) => {
