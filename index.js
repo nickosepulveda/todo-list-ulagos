@@ -1,5 +1,16 @@
-const tasks = ["task1", "task2"];
+//const tasks = ["task1", "task2"];
 
+const tasks = [{
+    id: 1,
+    name: "Task",
+    isCompleted: false
+},
+{
+    id: 2,
+    name: "Task 1",
+    isCompleted: false
+}
+];
 document.addEventListener("DOMContentLoaded", function() {
     // referencias
     const form = document.querySelector("form");
@@ -11,7 +22,11 @@ document.addEventListener("DOMContentLoaded", function() {
         const formData = new FormData(event.target);
         const data = Object.fromEntries(formData);
 
-        tasks.push(data.task);
+        tasks.push({
+            id: tasks.length + 1,
+            name: data.task,
+            isCompleted: false
+        });
         console.log(tasks)
 
         let tasksRender = tasks.map((task) => {
@@ -19,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 <div class="item-container">
                     <label for="">
                         <input type="checkbox" class="check-padding" name="" id="">
-                        ${task}
+                        ${task.name}
                     </label>
                     <div class="align-self-center">
                     <div class="dropdown menu-dropdown" onclick="this.classList.toggle('active');">
@@ -45,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function() {
             <div class="item-container">
                 <label for="">
                     <input type="checkbox" name="" id="">
-                    ${task}
+                    ${task.name}
                 </label>
                 <div class="align-self-center">
                 <div class="dropdown menu-dropdown" onclick="this.classList.toggle('active');">
