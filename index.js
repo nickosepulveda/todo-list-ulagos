@@ -1,4 +1,5 @@
 const tasks = ["task1", "task2"];
+const tasksOb = [{id: 1, name: 'Tarea1', iscompleted: false},{id:2,name: 'Tarea2',iscompleted: 67}]
 
 document.addEventListener("DOMContentLoaded", function() {
     // referencias
@@ -10,32 +11,35 @@ document.addEventListener("DOMContentLoaded", function() {
         
         const formData = new FormData(event.target);
         const data = Object.fromEntries(formData);
-
+        
         tasks.push(data.task);
-        console.log(tasks)
+        console.log(tasksOb)
 
         let tasksRender = tasks.map((task) => {
             return (`
                 <div class="item-container">
-                    <label for="">
+                    <label for="" class="apart">
                         <input type="checkbox" name="" id="">
                         ${task}
                     </label>
-                    <button type="button">-</button>
+                    <div class="icon"></div>
                 </div>
             `)
         })
         listContainer.innerHTML = tasksRender.join("");
+        
     })
 
     let tasksRender = tasks.map((task) => {
         return (`
             <div class="item-container">
-                <label for="">
+                <label for="" class="apart">
                     <input type="checkbox" name="" id="">
                     ${task}
                 </label>
-                <button type="button">-</button>
+                
+                <div class="icon"></div>
+                
             </div>
         `)
     })

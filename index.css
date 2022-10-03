@@ -1,17 +1,19 @@
 :root{
-    --background: #dcddec;
-    --white: rgb(249, 249, 249);
-    --primary: rgba(43, 43, 195, 1);
+    --background: #eeeff4;
+    --white: rgb(243, 240, 240);
+    --primary: rgb(162, 162, 226);
 
 }
 
 *{
     margin: 0;
     padding: 0;
+    
 }
 
 body{
     background-color: var(--background);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .img-container{
@@ -29,36 +31,80 @@ h1{
 }
 
 .form-horizontal{
-    width: 100%;
-    text-align: center;
-    padding: 10px 0px;
+    width: 20%;
+    text-align:center ;
+    padding: 10px 2%;
+   
+    background-color: rgb(144, 150, 150);
+    margin-left: 14%;
+   /*  margin-right: 20%; */
+    margin-bottom: 2%;
+    padding-left: 1px;
+    border-radius: 8px 8px 8px 8px;
+    box-shadow: 2px 2px 5px #999;
+    
 }
 
 input[type="text"]{
     width: 70%;
     height: 22px;
+    padding: 3px;
+    border-radius: 8px 8px 8px 8px;
+    box-shadow: 2px 2px 5px rgb(40, 102, 237);
+    margin-left: 20% ;
+    margin-right: 10%;
+    margin-bottom: 3%;
+    border: 1px;
+    border-color: rgb(42, 255, 255);
 }
 
 button{
-    width: 25px;
-    height: 24px;
-    background-color: var(--primary);
-    color: var(--white);
+    margin-left: 10%;
+    padding: 5px;
+    background-color: rgb(176, 176, 176);
+    color: black;
+    border-radius: 0.1cm;
+    cursor: pointer;
+    border: #eeeff4;
+    box-shadow: 2px 2px 5px rgb(31, 27, 27);
+    font-weight: bold;
 }
 
+.icon{
+  margin-top: 0.5%; 
+  top: 0.25rem;
+  margin-left: 0.2rem;
+  margin-right: 0.2rem;
+  width: 1rem;
+  height: 0.125em;
+  border-top: 0.375em double #000;
+  border-bottom: 0.125em solid #000;
+}
+
+
 .list-container{
-    width: 100%;
+    width: 72.2%;
+    margin-left: 14%;
     display: flex;
-    align-items: center;
     flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    padding-top: 10px;
+    padding-bottom: 10px; 
+    border-radius: 0.1cm;
+    box-shadow: 2px 2px 5px #999;
+    
 }
 
 .item-container{
-    width: 72%;
-    border: 1px solid var(--white);
+    width: 96%;
+    border-radius: 0.1cm;
+    border-bottom: 3px solid var(--white);
     display: flex;
     justify-content: space-between;
     padding: 5px 10px;
+    margin-left: 8px;
+
+    
 } 
 
 .stats{
@@ -66,4 +112,10 @@ button{
     text-align: center;
     font-size: 16px;
     font-weight: bold;
+}
+.apart{
+    
+}
+.form-horizontal{
+    
 }
