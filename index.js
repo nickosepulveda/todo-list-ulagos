@@ -21,7 +21,18 @@ document.addEventListener("DOMContentLoaded", function() {
                         <input type="checkbox" class="check-padding" name="" id="">
                         ${task}
                     </label>
-                    <button type="button" class="button-delete">Eliminar</button>
+                    <div class="align-self-center">
+                    <div class="dropdown menu-dropdown" onclick="this.classList.toggle('active');">
+                        <img class="img-menu" src="./static/img/3puntos.png">
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        
+                        <a class="dropdown-item btn-delete" data-id="" href="#">Eliminar</a>
+                        <a class="dropdown-item btn-delete" data-id="" href="#">Editar</a>
+                        <a class="dropdown-item btn-delete" data-id="" href="#">Otras opciones</a>
+                        
+                      </div>
+                    </div>
+                  </div>
                 </div>
             `)
         })
@@ -35,7 +46,18 @@ document.addEventListener("DOMContentLoaded", function() {
                     <input type="checkbox" name="" id="">
                     ${task}
                 </label>
-                <button type="button" class="button-delete">Eliminar</button>
+                <div class="align-self-center">
+                <div class="dropdown menu-dropdown" onclick="this.classList.toggle('active');">
+                    <img class="img-menu" src="./static/img/3puntos.png">
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    
+                    <a class="dropdown-item btn-delete" data-id="" href="#">Eliminar</a>
+                    <a class="dropdown-item btn-delete" data-id="" href="#">Editar</a>
+                    <a class="dropdown-item btn-delete" data-id="" href="#">Otras opciones</a>
+                    
+                  </div>
+                </div>
+              </div>
             </div>
         `)
     })
