@@ -1,5 +1,5 @@
-const tasks = [];
-/*const tasks = [{
+//const tasks = [];
+const tasks = [{
     id: 1,
     name: "Task1",
     isCompleted: false
@@ -10,12 +10,12 @@ const tasks = [];
     isCompleted: false
 }
 ];
-*/
+
 document.addEventListener("DOMContentLoaded", function() {
     // referencias
     const form = document.querySelector("form");
     const listContainer = document.querySelector(".list-container");
-
+    taskRender()
     form.addEventListener("submit", function(event) {
         event.preventDefault();
         
@@ -28,31 +28,26 @@ document.addEventListener("DOMContentLoaded", function() {
             isCompleted: false
         });
         console.log(tasks)
+        taskRender()
+    })
 
-        let tasksRender = tasks.map((task) => {
-            return (`
+    function taskRender(){
+        let li="";
+        tasks.map((task) => {
+            li += `
                 <div class="item-container">
                     <label for="">
                         <input type="checkbox" name="" id="">
                         ${task.name}
                     </label>
-                    <button class="button_eliminar" type="button">-</button>
+                    <input type="image" name="eliminar" class="button_eliminar" src="./static/img/56763.png" alt="text"> 
                 </div>
-            `)
+            `
         })
-        listContainer.innerHTML = tasksRender.join("");
-    })
-
-    let tasksRender = tasks.map((task) => {
-        return (`
-            <div class="item-container">
-                <label for="">
-                    <input type="checkbox" name="" id="">
-                    ${task.name}
-                </label>
-                <button class="button_eliminar" type="button">-</button>
-            </div>
-        `)
-    })
-    listContainer.innerHTML = tasksRender.join("");
+        listContainer.innerHTML = li;
+        document.getElementById('form').reset();
+        
+    };
+    
 });
+//<button class="button_eliminar" style="background: url(./static/img/56763.png) type="button-eliminar">-</button>
