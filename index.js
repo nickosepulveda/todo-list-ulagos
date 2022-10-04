@@ -1,5 +1,6 @@
 const tasks = ["task1", "task2"];
-const tasksOb = [{id: 1, name: 'Tarea1', iscompleted: false},{id:2,name: 'Tarea2',iscompleted: 67}]
+/* Objeto Tareas */
+const tasksOb = [{id: 1, name: 'Tarea1', iscompleted: false},{id:2,name: 'Tarea2',iscompleted: false}]
 
 document.addEventListener("DOMContentLoaded", function() {
     // referencias
@@ -11,16 +12,17 @@ document.addEventListener("DOMContentLoaded", function() {
         
         const formData = new FormData(event.target);
         const data = Object.fromEntries(formData);
+        /* Agregando objeto con propiedades */
+        tasksOb.push({id: tasksOb.length+1, name: data.task, iscompleted: false});
         
-        tasks.push(data.task);
-        console.log(tasksOb)
 
-        let tasksRender = tasks.map((task) => {
+        let tasksRender = tasksOb.map((prop) => {
             return (`
                 <div class="item-container">
                     <label for="" class="apart">
                         <input type="checkbox" name="" id="">
-                        ${task}
+                        
+                        Nombre:${ ' '+prop.name}
                     </label>
                     <div class="icon"></div>
                 </div>
@@ -31,12 +33,12 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById('form-horizontal').reset();
     })
 
-    let tasksRender = tasks.map((task) => {
+    let tasksRender = tasksOb.map((prop) => {
         return (`
             <div class="item-container">
                 <label for="" class="apart">
                     <input type="checkbox" name="" id="">
-                    ${task}
+                    Nombre:${' '+prop.name}
                 </label>
                 
                 <div class="icon"></div>
