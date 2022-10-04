@@ -2,6 +2,7 @@
     --background: #dcddec;
     --white: rgb(249, 249, 249);
     --primary: rgba(43, 43, 195, 1);
+    --secundary: #0D855A;
 
 }
 
@@ -11,7 +12,11 @@
 }
 
 body{
-    background-color: var(--background);
+    background-image: url("./static/img/backgroundtodo.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: 1920px 1080px;
+    background-repeat: no-repeat;
 }
 
 .img-container{
@@ -31,19 +36,23 @@ h1{
 .form-horizontal{
     width: 100%;
     text-align: center;
-    padding: 10px 0px;
+    padding: 5px 0px 10px 0px;
 }
 
 input[type="text"]{
-    width: 70%;
+    width: 61%;
     height: 22px;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
 }
 
 button{
     width: 25px;
     height: 24px;
-    background-color: var(--primary);
+    background-color: var(--secundary);
     color: var(--white);
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
 }
 
 .list-container{
@@ -54,7 +63,7 @@ button{
 }
 
 .item-container{
-    width: 72%;
+    width: 70%;
     border: 1px solid var(--white);
     display: flex;
     justify-content: space-between;
@@ -66,4 +75,23 @@ button{
     text-align: center;
     font-size: 16px;
     font-weight: bold;
+}
+
+button[type="submit"]{
+    width: 100px;
+    height: 24px;
+    background-color: var(--secundary);
+    color: var(--white);
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+}
+
+.blur-container{
+    width: 60%;
+    backdrop-filter: blur(4px);
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 1px 15px 2px 15px;
+    border-radius: 0.25rem;
 }
