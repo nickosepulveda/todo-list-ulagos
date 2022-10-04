@@ -32,6 +32,9 @@ document.addEventListener("DOMContentLoaded", function() {
             `)
         })
         listContainer.innerHTML = tasksRender.join("");
+    
+        document.getElementById('task-id').reset();
+    
     })
 
     let tasksRender = tasks.map((task) => {
