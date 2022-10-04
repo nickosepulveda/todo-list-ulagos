@@ -1,4 +1,18 @@
 const tasks = ["task1", "task2"];
+const ArregloTarea = [
+                        {
+                            id: 1,
+                            name: "Tarea 1",
+                            isCompleted: false,
+                        },
+                        {
+                            id: 2,
+                            name: "Tarea 2",
+                            isCompleted: false,
+                        }
+
+]
+
 
 document.addEventListener("DOMContentLoaded", function() {
     // referencias
@@ -29,12 +43,12 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById('form1').reset();
     })
 
-    let tasksRender = tasks.map((task) => {
+    let tasksRender = ArregloTarea.map((task) => {
         return (`
             <div class="item-container">
                 <label for="">
                     <input type="checkbox" name="" id="">
-                    ${task}
+                    ${task.name}
                 </label>
                 <button type="button">-</button>
             </div>
