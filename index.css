@@ -2,6 +2,7 @@
     --background: #dcddec;
     --white: rgb(249, 249, 249);
     --primary: rgba(43, 43, 195, 1);
+    --red: rgb(233, 10, 10);
 
 }
 
@@ -32,6 +33,7 @@ h1{
     width: 100%;
     text-align: center;
     padding: 10px 0px;
+    border-color: black;
 }
 
 input[type="text"]{
@@ -39,10 +41,17 @@ input[type="text"]{
     height: 22px;
 }
 
-button{
+.button_agregar{
     width: 25px;
     height: 24px;
     background-color: var(--primary);
+    color: var(--white);
+}
+
+.button_eliminar{
+    width: 25px;
+    height: 24px;
+    background-color: var(--red);
     color: var(--white);
 }
 
@@ -55,12 +64,23 @@ button{
 
 .item-container{
     width: 72%;
-    border: 1px solid var(--white);
     display: flex;
     justify-content: space-between;
     padding: 5px 10px;
 } 
 
+.w3-container{
+    border-color:black;
+    padding: 5px 10px;
+}
+
+.container{
+    align-items: center;
+    background-color: var(--white);
+    flex-direction: column;
+    width: 72%;
+    margin: 0 0 0 100px;
+}
 .stats{
     margin-top: 20px;
     text-align: center;
