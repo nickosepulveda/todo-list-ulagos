@@ -1,7 +1,7 @@
 :root{
     --background: #dcddec;
     --white: rgb(249, 249, 249);
-    --primary: rgba(43, 43, 195, 1);
+    --primary: rgb(255, 255, 255);
 
 }
 
@@ -44,13 +44,14 @@ input[type="text"]{
     height: 22px;
     border-radius: 4%;
     border: 1px;
+    color: black;
 }
 
 button{
     width: 55px;
     height: 24px;
     background-color: var(--primary);
-    color: var(--white);
+    color: black;
 }
 
 .list-container{
@@ -75,3 +76,42 @@ button{
     font-weight: bold;
     margin-bottom: 10px;
 }
+
+.contenedor{
+    background-color: rgba(255, 255, 255, 0.753);
+    margin: 5% 15%;
+    min-height: 80px;
+    border-width: 1px;
+    border-radius: 5%;
+    border-color: rgb(0, 0, 0);
+    border-style: solid;
+}
+
+.dropdown {
+    display: inline-block;
+    position: relative;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.4);
+    background-color: rgb(255, 255, 255);  
+    min-width: 200px;
+    z-index: 1;  
+  }
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  .dropdown-content a {
+    display: block;
+    color: #000000;
+    padding: 5px;
+    text-decoration: none;
+  }
+  .dropdown-content a:hover {
+    color: #FFFFFF;
+    background-color: #a1a1a1;
+  }
+  .boton-agregar{
+    background-color: rgb(127, 255, 127);
+  }

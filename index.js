@@ -16,12 +16,18 @@ document.addEventListener("DOMContentLoaded", function() {
 
         let tasksRender = tasks.map((task) => {
             return (`
-                <div class="item-container">
+               <div class="item-container">
                     <label for="">
-                        <input type="checkbox" name="" id="">
+                        <input type="checkbox" class="check-box" name="" id="">
                         ${task}
                     </label>
-                    <button type="button">-</button>
+                    <div class="dropdown">
+                    <button>- - -</button>
+                    <div class="dropdown-content">
+                    <a href="#">Eliminar</a>
+                    <a href="#">Editar</a>
+                    </div>
+                    </div>
                 </div>
             `)
         })
@@ -31,12 +37,18 @@ document.addEventListener("DOMContentLoaded", function() {
     let tasksRender = tasks.map((task) => {
         return (`
             <div class="item-container">
-                <label for="">
-                    <input type="checkbox" name="" id="">
-                    ${task}
-                </label>
-                <button type="button">-</button>
-            </div>
+                    <label for="">
+                        <input type="checkbox" class="check-box" name="" id="">
+                        ${task}
+                    </label>
+                    <div class="dropdown">
+                    <button>- - -</button>
+                    <div class="dropdown-content">
+                    <a href="#">Eliminar</a>
+                    <a href="#">Editar</a>
+                    </div>
+                    </div>
+                </div>
         `)
     })
     listContainer.innerHTML = tasksRender.join("");
