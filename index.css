@@ -1,5 +1,5 @@
 :root{
-    --background: #dcddec;
+    --background: #bd857b;
     --white: rgb(249, 249, 249);
     --primary: rgba(43, 43, 195, 1);
 
@@ -37,12 +37,13 @@ h1{
 input[type="text"]{
     width: 70%;
     height: 22px;
+    background-color: rgb(176, 176, 221);
 }
 
 button{
     width: 25px;
     height: 24px;
-    background-color: var(--primary);
+    background-color: blue;
     color: var(--white);
 }
 
