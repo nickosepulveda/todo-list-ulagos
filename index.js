@@ -1,4 +1,4 @@
-const tasks = [ {id:1, name:"task1", isCompleted:"True"}, {id:2, name:"task2", isCompleted:"False"}];
+const tasks = [ {id:1, name:"Tarea 1", isCompleted:"False"}, {id:2, name:"Tarea 2", isCompleted:"False"}];
 
 document.addEventListener("DOMContentLoaded", function() {
     // referencias
@@ -11,9 +11,12 @@ document.addEventListener("DOMContentLoaded", function() {
         const formData = new FormData(event.target);
         const data = Object.fromEntries(formData);
 
-        tasks.push(data.task);
+        tasks.push({
+            id:task.lenght +1,
+            name: data.task,
+            isCompleted: false,
+        });
         console.log(tasks)
-        let i=1;
 
         let tasksRender = tasks.map((task) => {
             return (`
@@ -24,11 +27,11 @@ document.addEventListener("DOMContentLoaded", function() {
                             <span class="checkmark">
                             </span>
                             <span>
-                                ${i++}, ${task.name}, false
+                                ${task.id}, ${task.name}, ${task.isCompleted}
                             </span>
                         </label>
                     </div>
-                        <button type="button">-</button>
+                        <button type="button">☰</button>
                     
                 </div>
             `)
@@ -51,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         </span>
                 </label>
                 </div>
-                <button type="button">-</button>              
+                <button type="button">☰</button>              
             </div>
         `)
     })
