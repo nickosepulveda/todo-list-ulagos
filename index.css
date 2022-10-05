@@ -1,7 +1,7 @@
 :root{
-    --background: #dcddec;
-    --white: rgb(249, 249, 249);
-    --primary: rgba(43, 43, 195, 1);
+    --background: #ffffff;
+    --white: rgb(255, 255, 255);
+    --primary: rgb(130, 137, 173);
 
 }
 
@@ -20,6 +20,14 @@ body{
     margin: 20px 0px;
 }
 
+.container{
+    min-height: 40vh;
+    margin: 8% 20% 3% 20%;
+    border-width: 2px;
+    border-radius: 18px;
+    border-style: solid;
+}
+
 .logo{
     width: 30%;
 }
@@ -30,39 +38,49 @@ h1{
 
 .form-horizontal{
     width: 100%;
+    margin-left: 15px;
+    margin-bottom: 1px;
     text-align: center;
-    padding: 10px 0px;
+    padding: 5px 0px;
 }
 
 input[type="text"]{
-    width: 70%;
-    height: 22px;
+    width: 32%;
+    padding: 8px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 2px;
+    resize: vertical;
 }
 
 button{
-    width: 25px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
     background-color: var(--primary);
     color: var(--white);
+    border: #ffffff;
+    border-radius: 3px;
 }
 
 .list-container{
-    width: 100%;
+    width: 102%;
     display: flex;
     align-items: center;
     flex-direction: column;
+    padding: 10px;
 }
 
 .item-container{
-    width: 72%;
-    border: 1px solid var(--white);
+    width: 30%;
+    background-color: rgb(255, 255, 255);
+    border: 2px solid var(--white);
     display: flex;
     justify-content: space-between;
-    padding: 5px 10px;
+    padding: 10px 30px 15px 15px;
 } 
 
 .stats{
     margin-top: 20px;
+    margin-bottom: 4%;
     text-align: center;
     font-size: 16px;
     font-weight: bold;
