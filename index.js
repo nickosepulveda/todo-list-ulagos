@@ -1,12 +1,12 @@
 //const tasks = ["task1", "task2"];
 const tasks=[{
         id: 1,
-        name: "Tarea 1",
+        name: "Task 1",
         isCompleted: false
     },
     {
         id: 2,
-        name: "Tarea 2",
+        name: "Task 2",
         isCompleted: true
     }
 ]
