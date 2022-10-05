@@ -1,7 +1,7 @@
 :root{
     --background: #dcddec;
     --white: rgb(249, 249, 249);
-    --primary: rgba(43, 43, 195, 1);
+    --primary: rgb(78, 189, 84);
     --red: rgb(233, 10, 10);
 
 }
@@ -18,7 +18,16 @@ body{
 .all-container{
     background-color: var(--background);
     padding: 10px 0px;
+    border-radius: 7px;
+    width: 90%;
+    margin :auto;
 }
+
+.w3-container{
+    padding: 10px 20px;
+    border-radius: 7px;
+}
+
 
 .img-container{
     width: 100%;
@@ -39,6 +48,7 @@ h1{
     text-align: center;
     padding: 10px 0px;
     border-color: black;
+    border-radius: 7px;
 }
 
 input[type="text"]{
@@ -72,17 +82,13 @@ input[type="text"]{
     padding: 5px 10px;
 } 
 
-.w3-container{
-    border-color:black;
-    padding: 5px 10px;
-}
-
 .container{
     align-items: center;
     background-color: var(--white);
     flex-direction: column;
     width: 72%;
-    margin: 0 0 0 100px;
+    margin: auto;
+    display: flex;
 }
 .stats{
     margin-top: 20px;
