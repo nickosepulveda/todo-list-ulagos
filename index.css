@@ -20,16 +20,16 @@ body{
     margin: 20px 0px;
 }
 
+.logo{
+    width: 30%;
+}
+
 .container{
     margin: 8% 20% 3% 20%;
     min-height: 40vh;
     border-width: 2px;
     border-radius: 18px;
     border-style: solid;
-}
-
-.logo{
-    width: 30%;
 }
 
 h1{
