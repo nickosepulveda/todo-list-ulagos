@@ -16,47 +16,39 @@ const form = document.querySelector("form");
 const listContainer = document.querySelector(".list-container");
 
 const contentLoaded = function(){
-    let tasksRender = tasks.map((task) => {
-        return (`
-            <div class="item-container">
-                <label for="">
-                    <input type="checkbox" name="" id="">
-                    ${task.value}
-                </label>
-                <button type="button">...</button>
-            </div>
-        `)
-    })
-    listContainer.innerHTML = tasksRender.join("");
+   taskRender();
 }
 
 const submitTask = function(event){
-        event.preventDefault();
-        
-        const formData = new FormData(event.target);
-        const data = Object.fromEntries(formData);
+    event.preventDefault();
 
-        tasks.push({
-          id: tasks.length + 1,
-          value: data.task,
-          isDone: false
-        });
-        console.table(tasks)
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData);
 
-        let render = tasks.map((task) => {
-            return (`
-                <div class="item-container">
-                    <label for="">
-                        <input type="checkbox" name="" id="">
-                        ${task.value}
-                    </label>
-                    <button type="button">...</button>
-                </div>
-            `)
-        })
-        listContainer.innerHTML = render.join("");
-       document.getElementById("task-form").reset();
+    tasks.push({
+      id: tasks.length + 1,
+      value: data.task,
+      isDone: false
+    });
+    console.table(tasks)
+    taskRender();
 }
 
-document.addEventListener("DOMContentLoaded", contentLoaded)
-form.addEventListener("submit",submitTask)
+const taskRender = function(){
+    let render = tasks.map((task) => {
+        return (`
+          <div class="item-container">
+              <label for="">
+                  <input type="checkbox" name="" id="">
+                  ${task.value}
+              </label>
+              <button type="button">...</button>
+          </div>
+        `)
+    });
+    listContainer.innerHTML = render.join("");
+    document.getElementById("task-form").reset();
+}
+
+document.addEventListener("DOMContentLoaded", contentLoaded);
+form.addEventListener("submit",submitTask);
