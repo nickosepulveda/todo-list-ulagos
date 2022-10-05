@@ -26,6 +26,8 @@ document.addEventListener("DOMContentLoaded", function() {
             `)
         })
         listContainer.innerHTML = tasksRender.join("");
+
+        document.getElementById('formulario').reset();
     })
 
     let tasksRender = tasks.map((task) => {
@@ -40,4 +42,6 @@ document.addEventListener("DOMContentLoaded", function() {
         `)
     })
     listContainer.innerHTML = tasksRender.join("");
+    
+    
 });
