@@ -3,7 +3,7 @@
     --primary: rgb(53, 173, 139);
     background: rgb(5,72,177);
     background: linear-gradient(90deg, rgba(5,72,177,1) 2%, rgba(69,80,195,1) 25%, rgba(45,153,167,1) 75%, rgba(0,212,255,1) 98%);
-
+    
 }
 
 *{
@@ -13,6 +13,7 @@
 
 body{
     background-color: var(--background);
+    
 }
 
 .img-container{
@@ -31,9 +32,10 @@ h1{
 }
 
 .form-horizontal{
-    width: 100%;
+    width: 50%;
     text-align: center;
-    padding: 10px 0px;
+    padding: 10px 400px;
+    
 }
 
 input[type="text"]{
@@ -49,21 +51,22 @@ button{
 }
 
 .list-container{
-    width: 100%;
+    
     display: flex;
     align-items: center;
     flex-direction: column;
-    color:rgba(183, 224, 234, 0.872);
-    border-color: black;
+    color:rgba(0, 0, 0, 0.872);
 }
 
 .item-container{
-    width: 72%;
-    border: 1px solid var(--white);
+    width: 40%;
+    border: 0.5px solid var(--white);
     display: flex;
     justify-content: space-between;
     padding: 5px 10px;
-    border-color: black;
+    border-color: rgb(59, 48, 48);
+    background-color: white;
+    
     
 } 
 
