@@ -52,8 +52,8 @@ button{
     color: var(--white);
 }
 
+
 .list-container{
-    width: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -61,17 +61,28 @@ button{
 }
 
 .item-container{
-    width: 72%;
-    border: 1px solid var(--white);
+    background-color: var(--white);
+    width: 40%;
+    border: 1px;
     display: flex;
     justify-content: space-between;
-    padding: 5px 10px;
+    padding: 20px 20px;
+    border-bottom: 1px solid lightslategrey;
+    
 } 
-
 .stats{
     margin-top: 20px;
     text-align: center;
     font-size: 16px;
     font-weight: bold;
     font-family: Helvetica, sans-serif;
+}
+
+input[type="checkbox"]{
+    transform: scale(1.5);
+    outline: 1px;
+}
+
+span{
+    padding-left: 15px;
 }

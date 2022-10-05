@@ -19,13 +19,14 @@ document.addEventListener("DOMContentLoaded", function() {
                 <div class="item-container">
                     <label for="">
                         <input type="checkbox" name="" id="">
-                        ${task}
+                        <span>${task}</span>
                     </label>
-                    <button type="button">-</button>
+                    <button type="button">≡</button>
                 </div>
             `)
         })
         listContainer.innerHTML = tasksRender.join("");
+        document.getElementById("my_form").reset();
     })
 
     let tasksRender = tasks.map((task) => {
@@ -33,9 +34,9 @@ document.addEventListener("DOMContentLoaded", function() {
             <div class="item-container">
                 <label for="">
                     <input type="checkbox" name="" id="">
-                    ${task}
+                    <span>${task}</span>
                 </label>
-                <button type="button">-</button>
+                <button type="button">≡</button>
             </div>
         `)
     })
