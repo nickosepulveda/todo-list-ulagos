@@ -1,4 +1,21 @@
-const tasks = ["task1", "task2"];
+//const tasks = ["task1", "task2"];
+
+
+const tasks = [
+    {
+        id: "integer",
+        name: "task1",
+        isCompleted: "boolean",
+    },
+    {
+        id: "integer",
+        name: "task2",
+        isCompleted: "boolean",
+    }
+]
+
+
+
 
 document.addEventListener("DOMContentLoaded", function() {
     // referencias
@@ -22,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 
                         <input type="checkbox" name="" id="">
                         
-                        ${task}
+                        ${task.name}
                         
                     </label>
                     <button type="button">-</button>
@@ -39,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 <label for="">
                     <input type="checkbox" name="" id="">
                     
-                    ${task}
+                    ${task.name}
                 </label>
                 <button type="button">-</button>
             </div>
