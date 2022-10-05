@@ -2,13 +2,9 @@ const tasks = ["task1", "task2"];
 /* Objeto Tareas */
 const tasksOb = [{id: 1, name: 'Tarea1', iscompleted: false},{id:2,name: 'Tarea2',iscompleted: false}]
 
-
-function contentLoaded(){
-    const form = document.querySelector("form");
+function submitTask(event){
     const listContainer = document.querySelector(".list-container");
-
-    form.addEventListener("submit", function(event) {
-        event.preventDefault();
+    event.preventDefault();
         
         const formData = new FormData(event.target);
         const data = Object.fromEntries(formData);
@@ -31,7 +27,14 @@ function contentLoaded(){
         listContainer.innerHTML = tasksRender.join("");
         /**2 ejercicio */
         document.getElementById('form-horizontal').reset();
-    })
+}
+
+
+function contentLoaded(){
+    const form = document.querySelector("form");
+    const listContainer = document.querySelector(".list-container");
+    /* SubmitTask como parametro */
+    form.addEventListener("submit", submitTask)
 
     let tasksRender = tasksOb.map((prop) => {
         return (`
