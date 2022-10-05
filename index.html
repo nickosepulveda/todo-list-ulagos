@@ -6,26 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo List | ULagos</title>
     <link rel="stylesheet" href="./index.css">
+    <link href='https://css.gg/trash.css' rel='stylesheet'>
 </head>
 <body>
+      
     <div class="img-container">
-        <img class="logo" src="./static/img/ulagos.png" alt="logo">
+        <img class="logo" src="./static/img/ulagos2.png" alt="logo">
+        <!-- <img class="logo" src="./static/img/ulagos.png" alt="logo"> -->
     </div>
+
+    <div class="border center all-containter">
+        <h1 class="titulo">Listado de tareas</h1>
+
     
-    <h1>Listado de tareas</h1>
+        <form action="#" class="form-horizontal">
+            <input type="text" name="task" placeholder="Escribe una tarea">
+            <button type="submit">+</button>    
+        </form>
 
-    <form action="#" class="form-horizontal">
-        <input type="text" name="task" placeholder="Escribe una tarea">
-        <button type="submit">+</button>    
-    </form>
+        <div class="list-container">
+        </div>
 
-    <div class="list-container">
+        <div class="stats">
+            Se han completado 5/10 tareas
+        </div>
     </div>
-
-    <div class="stats">
-        Se han completado 5/10 tareas
-    </div>
-
 
     <script src="./index.js"></script>
 </body>

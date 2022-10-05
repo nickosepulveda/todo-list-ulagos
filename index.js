@@ -17,11 +17,15 @@ document.addEventListener("DOMContentLoaded", function() {
         let tasksRender = tasks.map((task) => {
             return (`
                 <div class="item-container">
-                    <label for="">
-                        <input type="checkbox" name="" id="">
-                        ${task}
-                    </label>
-                    <button type="button">-</button>
+                    <div class="item-separator">
+                        <label class="check-container">
+                            <input type="checkbox" name="" id="">
+                            <span class="checkmark"></span>
+                            ${task}
+                        </label>
+                    </div>
+                        <button type="button">-</button>
+                    
                 </div>
             `)
         })
@@ -31,11 +35,14 @@ document.addEventListener("DOMContentLoaded", function() {
     let tasksRender = tasks.map((task) => {
         return (`
             <div class="item-container">
-                <label for="">
+                <div class="item-separator">
+                <label class="check-container">
                     <input type="checkbox" name="" id="">
+                    <span class="checkmark"></span>
                     ${task}
                 </label>
-                <button type="button">-</button>
+                </div>
+                <button type="button">-</button>              
             </div>
         `)
     })
