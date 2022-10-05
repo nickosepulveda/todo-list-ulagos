@@ -1,7 +1,7 @@
 :root{
-    --background: #dcddec;
-    --white: rgb(249, 249, 249);
-    --primary: rgba(43, 43, 195, 1);
+    --background: #414688;
+    --white: rgb(255, 255, 255);
+    --primary: rgba(0, 0, 0, 0.801);
 
 }
 
@@ -35,6 +35,7 @@ h1{
 }
 
 input[type="text"]{
+    color : rgb(66, 167, 52);
     width: 70%;
     height: 22px;
 }
@@ -47,6 +48,7 @@ button{
 }
 
 .list-container{
+    color : rgb(165, 25, 25);
     width: 100%;
     display: flex;
     align-items: center;
