@@ -28,14 +28,8 @@ function submitTask(event){
         /**2 ejercicio */
         document.getElementById('form-horizontal').reset();
 }
-
-
-function contentLoaded(){
-    const form = document.querySelector("form");
+function TasksRender(){
     const listContainer = document.querySelector(".list-container");
-    /* SubmitTask como parametro */
-    form.addEventListener("submit", submitTask)
-
     let tasksRender = tasksOb.map((prop) => {
         return (`
             <div class="item-container">
@@ -50,6 +44,13 @@ function contentLoaded(){
         `)
     })
     listContainer.innerHTML = tasksRender.join("");
+}
+
+
+function contentLoaded(){
+    const form = document.querySelector("form");
+    form.addEventListener("submit", submitTask);
+    TasksRender();  
 }
 
 
