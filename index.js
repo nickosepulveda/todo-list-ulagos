@@ -1,4 +1,4 @@
-const tasks = ["task1", "task2"];
+const tasks = [ {id:1, name:"task1", isCompleted:"true"}, {id:2, name:"task2", isCompleted:"true"}];
 
 document.addEventListener("DOMContentLoaded", function() {
     // referencias
@@ -19,13 +19,14 @@ document.addEventListener("DOMContentLoaded", function() {
                 <div class="item-container">
                     <label for="">
                         <input type="checkbox" name="" id="">
-                        ${task}
+                        ${task.name}
                     </label>
                     <button type="button">-</button>
                 </div>
             `)
         })
         listContainer.innerHTML = tasksRender.join("");
+        document.getElementById('myform').reset();
     })
 
     let tasksRender = tasks.map((task) => {
@@ -33,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function() {
             <div class="item-container">
                 <label for="">
                     <input type="checkbox" name="" id="">
-                    ${task}
+                    ${task.name}
                 </label>
                 <button type="button">-</button>
             </div>
