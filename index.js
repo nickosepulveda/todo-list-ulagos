@@ -1,4 +1,4 @@
-const tasks = ["task1", "task2"];
+const tasks = [ {id:1, name:"task1", isCompleted:"True"}, {id:2, name:"task2", isCompleted:"False"}];
 
 document.addEventListener("DOMContentLoaded", function() {
     // referencias
@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         tasks.push(data.task);
         console.log(tasks)
+        let i=1;
 
         let tasksRender = tasks.map((task) => {
             return (`
@@ -20,8 +21,11 @@ document.addEventListener("DOMContentLoaded", function() {
                     <div class="item-separator">
                         <label class="check-container">
                             <input type="checkbox" name="" id="">
-                            <span class="checkmark"></span>
-                            ${task}
+                            <span class="checkmark">
+                            </span>
+                            <span>
+                                ${i++}, ${task.name}, false
+                            </span>
                         </label>
                     </div>
                         <button type="button">-</button>
@@ -40,8 +44,11 @@ document.addEventListener("DOMContentLoaded", function() {
                 <div class="item-separator">
                 <label class="check-container">
                     <input type="checkbox" name="" id="">
-                    <span class="checkmark"></span>
-                    ${task}
+                        <span class="checkmark">
+                        </span>
+                        <span>
+                            ${task.id}, ${task.name}, ${task.isCompleted}
+                        </span>
                 </label>
                 </div>
                 <button type="button">-</button>              
