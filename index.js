@@ -5,7 +5,7 @@ const tasks = [{
 },
 {
     id: 2,
-    value: "test2",
+    name: "test2",
     isCompleted: false
 }];
 
@@ -42,7 +42,7 @@ const tasksRender = function(){
             <div class="item-container">
                 <label for="">
                     <input type="checkbox" name="" id="">
-                    ${task}
+                    ${task.name}
                 </label>
                 <button type="button">-</button>
             </div>
