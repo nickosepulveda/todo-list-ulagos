@@ -1,7 +1,7 @@
 :root{
     --background: #dcddec;
     --white: rgb(249, 249, 249);
-    --primary: rgba(43, 43, 195, 1);
+    --primary: rgb(37, 37, 155)
 
 }
 
@@ -11,7 +11,8 @@
 }
 
 body{
-    background-color: var(--background);
+    background: rgb(88,98,171);
+    background: linear-gradient(90deg, rgba(88,98,171,1) 0%, rgba(124,142,217,1) 50%, rgba(88,98,171,1) 100%);
 }
 
 .img-container{
@@ -25,7 +26,9 @@ body{
 }
 
 h1{
+    font-family: 'Roboto', sans-serif;
     text-align: center;
+    padding: 20px;
 }
 
 .form-horizontal{
@@ -37,6 +40,9 @@ h1{
 input[type="text"]{
     width: 70%;
     height: 22px;
+    border-color: var(--primary);
+    border-radius: 4px;
+    padding: 7px;
 }
 
 button{
@@ -51,6 +57,7 @@ button{
     display: flex;
     align-items: center;
     flex-direction: column;
+    padding: 20px;
 }
 
 .item-container{
@@ -66,4 +73,5 @@ button{
     text-align: center;
     font-size: 16px;
     font-weight: bold;
+    font-family: Helvetica, sans-serif;
 }
