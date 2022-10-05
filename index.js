@@ -2,8 +2,8 @@ const tasks = ["task1", "task2"];
 /* Objeto Tareas */
 const tasksOb = [{id: 1, name: 'Tarea1', iscompleted: false},{id:2,name: 'Tarea2',iscompleted: false}]
 
-document.addEventListener("DOMContentLoaded", function() {
-    // referencias
+
+function contentLoaded(){
     const form = document.querySelector("form");
     const listContainer = document.querySelector(".list-container");
 
@@ -47,4 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
         `)
     })
     listContainer.innerHTML = tasksRender.join("");
-});
+}
+
+
+document.addEventListener("DOMContentLoaded", contentLoaded);
