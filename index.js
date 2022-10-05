@@ -1,5 +1,15 @@
-const tasks = ["task1", "task2"];
-
+//const tasks = [];
+const tasks = [{
+    id: 1,
+    name: "hacer la tarea",
+    isCompleted: false
+},
+{
+    id: 2,
+    name: "hacer la tarea denuevo",
+    isCompleted: false
+}
+];
 document.addEventListener("DOMContentLoaded", function() {
     // referencias
     const form = document.querySelector("form");
@@ -11,7 +21,11 @@ document.addEventListener("DOMContentLoaded", function() {
         const formData = new FormData(event.target);
         const data = Object.fromEntries(formData);
 
-        tasks.push(data.task);
+        tasks.push({
+            id: tasks.length + 1,
+            name: data.task,
+            isCompleted: false
+        });
         console.log(tasks)
 
         let tasksRender = tasks.map((task) => {
@@ -26,6 +40,7 @@ document.addEventListener("DOMContentLoaded", function() {
             `)
         })
         listContainer.innerHTML = tasksRender.join("");
+        document.getElementById('form').reset();
     })
 
     let tasksRender = tasks.map((task) => {
