@@ -1,23 +1,28 @@
 :root{
-    --background: #dcddec;
-    --white: rgb(249, 249, 249);
-    --primary: rgba(43, 43, 195, 1);
-
+    --background: #3670c7;
+    --white: #f4f4f4;
+    --black: #333;
+    --gray: #d3d3d3;
 }
 
 *{
     margin: 0;
     padding: 0;
+    color: var(--white);
 }
 
-body{
-    background-color: var(--background);
-}
 
 .img-container{
     width: 100%;
     text-align: center;
     margin: 20px 0px;
+}
+
+.app{
+    background-color: var(--background);
+    color: var(--white);
+    margin: 5% 20%;
+    border-radius: 20px;
 }
 
 .logo{
@@ -28,34 +33,36 @@ h1{
     text-align: center;
 }
 
+
 .form-horizontal{
-    width: 100%;
     text-align: center;
     padding: 10px 0px;
 }
 
 input[type="text"]{
-    width: 70%;
+    width: 50%;
     height: 22px;
 }
 
 button{
     width: 25px;
     height: 24px;
-    background-color: var(--primary);
-    color: var(--white);
+    background-color: var(--white);
+    color: var(--black);
+    border-radius: 5px;
+    text-decoration: none;
+    border: none;
 }
 
 .list-container{
-    width: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
+    font-size: 1.3em;
 }
 
 .item-container{
-    width: 72%;
-    border: 1px solid var(--white);
+    width: 66%;
     display: flex;
     justify-content: space-between;
     padding: 5px 10px;
@@ -67,3 +74,24 @@ button{
     font-size: 16px;
     font-weight: bold;
 }
+
+.new-todo{
+  background: transparent;
+  width: 10%;
+  border: 0;
+  color: var(--white);
+  border-bottom: 1px solid currentColor;
+  font-size: 1.3em;
+  outline: none;
+
+  transition: border-bottom 150ms ease-in;
+}
+
+.new-todo:focus{
+  border-bottom-width: 2px;
+}
+
+.new-todo::placeholder{
+  opacity: 0.4;
+}
+
