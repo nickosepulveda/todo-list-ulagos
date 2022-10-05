@@ -28,7 +28,6 @@ document.addEventListener("DOMContentLoaded", function() {
         listContainer.innerHTML = tasksRender.join("");
         document.getElementById("my_form").reset();
     })
-
     let tasksRender = tasks.map((task) => {
         return (`
             <div class="item-container">
