@@ -9,13 +9,16 @@ const tasks = [{
     isCompleted: false
 }
 ];
+document.addEventListener("DOMContentLoaded", Contentloaded);
 
-document.addEventListener("DOMContentLoaded", function() {
-    // referencias
-    const form = document.querySelector("form");
-    const listContainer = document.querySelector(".list-container");
+const form = document.querySelector("form");
+const listContainer = document.querySelector(".list-container");
 
-    form.addEventListener("submit", function(event) {
+function Contentloaded(){
+    TaskRender()
+    form.addEventListener("submit",SubmitTask);
+};
+function SubmitTask(event){
         event.preventDefault();
         
         const formData = new FormData(event.target);
@@ -27,9 +30,13 @@ document.addEventListener("DOMContentLoaded", function() {
             isCompleted: false
         });
         console.log(tasks)
+        TaskRender()
+    }
 
-        let tasksRender = tasks.map((task) => {
-            return (`
+    function TaskRender(){
+        formulario = "Tareas activas:";
+    tasks.map((task) => {
+        formulario = formulario + `
                <div class="item-container">
                     <label for="">
                         <input type="checkbox" class="check-box" name="" id="">
@@ -43,30 +50,8 @@ document.addEventListener("DOMContentLoaded", function() {
                     </div>
                     </div>
                 </div>
-            `)
+            `;
         })
-        listContainer.innerHTML = tasksRender.join("");
-    
-        document.getElementById('task-id').reset();
-    
-    })
-
-    let tasksRender = tasks.map((task) => {
-        return (`
-            <div class="item-container">
-                    <label for="">
-                        <input type="checkbox" class="check-box" name="" id="">
-                        ${task.name}
-                    </label>
-                    <div class="dropdown">
-                    <button>- - -</button>
-                    <div class="dropdown-content">
-                    <a href="#">Eliminar</a>
-                    <a href="#">Editar</a>
-                    </div>
-                    </div>
-                </div>
-        `)
-    })
-    listContainer.innerHTML = tasksRender.join("");
-});
+        document.getElementById('task-id').reset();  
+        listContainer.innerHTML = formulario;
+};
