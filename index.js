@@ -17,9 +17,13 @@ document.addEventListener("DOMContentLoaded", function() {
         let tasksRender = tasks.map((task) => {
             return (`
                 <div class="item-container">
+                
                     <label for="">
+                
                         <input type="checkbox" name="" id="">
+                        
                         ${task}
+                        
                     </label>
                     <button type="button">-</button>
                 </div>
@@ -33,6 +37,7 @@ document.addEventListener("DOMContentLoaded", function() {
             <div class="item-container">
                 <label for="">
                     <input type="checkbox" name="" id="">
+                    
                     ${task}
                 </label>
                 <button type="button">-</button>
