@@ -18,10 +18,15 @@ document.addEventListener("DOMContentLoaded", function() {
             return (`
                 <div class="item-container">
                     <label for="">
-                        <input type="checkbox" name="" id="">
+                        <input type="checkbox" name="" id="checkbox-task">
                         ${task}
                     </label>
-                    <button type="button">-</button>
+                    <button type="button" id="button-settings" class="dropdown">...
+                        <div class="dropdown-content">
+                            <a>edit 1</a>
+                            <a>edit 2</a>
+                        </div>
+                    </button>
                 </div>
             `)
         })
@@ -32,10 +37,15 @@ document.addEventListener("DOMContentLoaded", function() {
         return (`
             <div class="item-container">
                 <label for="">
-                    <input type="checkbox" name="" id="">
+                    <input type="checkbox" name="" id="checkbox-task">
                     ${task}
                 </label>
-                <button type="button">-</button>
+                <button type="button" id="button-settings" class="dropdown">...
+                    <div class="dropdown-content">
+                        <a>edit 1</a>
+                        <a>edit 2</a>
+                    </div>
+                </button>
             </div>
         `)
     })
