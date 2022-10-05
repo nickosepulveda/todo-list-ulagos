@@ -12,10 +12,10 @@ const tasks = [
 
 ];
 
-document.addEventListener("DOMContentLoaded", function() {
-    // referencias
-    const form = document.querySelector("form");
-    const listContainer = document.querySelector(".list-container");
+const form = document.querySelector("form");
+const listContainer = document.querySelector(".list-container");
+
+const contentLoaded = function(){
 
     form.addEventListener("submit", function(event) {
         event.preventDefault();
@@ -24,13 +24,13 @@ document.addEventListener("DOMContentLoaded", function() {
         const data = Object.fromEntries(formData);
 
         tasks.push({
-          id: tasks.length++,
+          id: tasks.length + 1,
           value: data.task,
           isDone: false
         });
-        console.log(tasks)
+        console.table(tasks)
 
-        let tasksRender = tasks.map((task) => {
+        let render = tasks.map((task) => {
             return (`
                 <div class="item-container">
                     <label for="">
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 </div>
             `)
         })
-        listContainer.innerHTML = tasksRender.join("");
+        listContainer.innerHTML = render.join("");
         document.getElementById("task-form").reset();
     })
 
@@ -57,4 +57,6 @@ document.addEventListener("DOMContentLoaded", function() {
         `)
     })
     listContainer.innerHTML = tasksRender.join("");
-});
+}
+
+document.addEventListener("DOMContentLoaded", contentLoaded)
