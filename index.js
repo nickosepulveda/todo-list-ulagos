@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const data = Object.fromEntries(formData);
 
         tasks.push({
-            id:task.lenght +1,
+            id:tasks.length +1,
             name: data.task,
             isCompleted: false,
         });
