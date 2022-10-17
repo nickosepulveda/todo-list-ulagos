@@ -14,8 +14,8 @@
     
     <h1>Listado de tareas</h1>
 
-    <form action="#" id="myform" class="form-horizontal">
-        <input type="text" name="task" placeholder="Escribe una tarea">
+    <form action="#" id="tasks-form" class="form-horizontal">
+        <input type="text" name="task" placeholder="Escribe una tarea" required>
         <button type="submit">+</button>
     </form>
     
@@ -23,7 +23,7 @@
         Lista de tareas a completar
     </div>
 
-    <div class="list-container">
+    <div class="list-container" id="tasks-list-container">
     </div>
 
     <div class="stats">
