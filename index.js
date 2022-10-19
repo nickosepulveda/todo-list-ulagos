@@ -41,7 +41,7 @@ const stateTask = (() => {
     return { addTask, removeTask, completedTask }
 })();
 
-const tasksRender = (tasks) => {
+const tasksRender = (tasksToRender) => {
     const createActionButton = (itemContainer) => {
         let buttonEl = document.createElement("button");
         buttonEl.type = "button"
@@ -64,6 +64,7 @@ const tasksRender = (tasks) => {
         inputEl.addEventListener("change", (e)=>{
             let id = e.target.name.split("-")[2];
             stateTask.completedTask(id, e.target.checked)
+            tasksRender([])
         })
 
         labelEl.appendChild(inputEl);
@@ -83,11 +84,14 @@ const tasksRender = (tasks) => {
     }
 
 
-    tasks.forEach((task) => {
+    tasksToRender.forEach((task) => {
         const itemContainer = createItemContainer(task)
 
         listContainer.appendChild(itemContainer);
     })
+    let taskCompleted = tasks.filter(t => t.isCompleted === true);
+    completedStats.innerText = taskCompleted.length;
+    totalStats.innerText = tasks.length;
 }
 
 const submitTask = (event) => {
@@ -105,7 +109,6 @@ const submitTask = (event) => {
 
 const contentLoaded = () => {
     tasksRender(tasks);
-    totalStats.innerText = tasks.length;
 }
 
 document.addEventListener("DOMContentLoaded", contentLoaded);
