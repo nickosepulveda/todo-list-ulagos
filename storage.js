@@ -21,3 +21,23 @@ class SessionStorage {
         return sessionStorage.setItem(key, JSON.stringify(value));
     }
 }
+
+class LocalStorage {
+    get(key){
+        return JSON.parse(localStorage.getItem(key));    
+    }
+
+    set(key, value){
+        return localStorage.setItem(key, JSON.stringify(value));
+    }
+}
+
+class ApiStorage {
+    get(key){
+        //return JSON.parse(localStorage.getItem(key));    
+    }
+
+    set(key, value){
+        //return localStorage.setItem(key, JSON.stringify(value));
+    }
+}

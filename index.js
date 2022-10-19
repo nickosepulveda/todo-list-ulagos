@@ -1,10 +1,45 @@
-const storage = new Storage();
+const storage = new Storage(new LocalStorage);
 const tasksOnSession = storage.get("tasks")
 
-const tasks = tasksOnSession? tasksOnSession : [];
+let tasks = tasksOnSession? tasksOnSession : [];
 
 const form = document.querySelector("#tasks-form");
 const listContainer = document.querySelector("#tasks-list-container");
+const totalStats = document.querySelector("#total-tasks");
+const completedStats = document.querySelector("#completed-tasks");
+
+const stateTask = (() => {
+    const refreshStorage = (tasks) => {
+        storage.set("tasks", tasks);
+    }
+    const addTask = (title) => {
+        const newTask = {
+            id: Math.random().toString(16).slice(2),
+            name: title,
+            isCompleted: false
+        };
+        console.log(newTask)
+        tasks.push(newTask);
+
+        refreshStorage(tasks);
+
+        return newTask;
+    }
+    const removeTask = (id) => {
+        tasks = tasks.filter(t => t.id != id);
+
+        refreshStorage(tasks);
+    }
+    const completedTask = (id, status) => {
+        let index = tasks.findIndex(t => t.id == id);
+        tasks[index]["isCompleted"] = status;
+
+        refreshStorage(tasks);
+    }
+
+
+    return { addTask, removeTask, completedTask }
+})();
 
 const tasksRender = (tasks) => {
     const createActionButton = (itemContainer) => {
@@ -15,8 +50,7 @@ const tasksRender = (tasks) => {
             const idEl = itemContainer.id.split("-")[1];
             itemContainer.remove()
             
-            tasks = tasks.filter(t => t.id != idEl);
-            storage.set("tasks", tasks);
+            stateTask.removeTask(idEl)
         }
 
         return buttonEl;
@@ -25,6 +59,12 @@ const tasksRender = (tasks) => {
         let labelEl = document.createElement("label");
         let inputEl = document.createElement("input");
         inputEl.type = "checkbox"
+        inputEl.name = `task-status-${task.id}`
+        inputEl.checked = task.isCompleted
+        inputEl.addEventListener("change", (e)=>{
+            let id = e.target.name.split("-")[2];
+            stateTask.completedTask(id, e.target.checked)
+        })
 
         labelEl.appendChild(inputEl);
         labelEl.append(` ${task.name}`)
@@ -55,22 +95,17 @@ const submitTask = (event) => {
 
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData);
-    const newElement = {
-        id: tasks.length + 1,
-        name: data.task,
-        isCompleted: false
-    };
 
-    tasks.push(newElement);
-    storage.set("tasks", tasks);
+    let newTask = stateTask.addTask(data.task)
 
-    tasksRender([newElement]);
+    tasksRender([newTask]);
 
     form.reset();
 }
 
 const contentLoaded = () => {
     tasksRender(tasks);
+    totalStats.innerText = tasks.length;
 }
 
 document.addEventListener("DOMContentLoaded", contentLoaded);
